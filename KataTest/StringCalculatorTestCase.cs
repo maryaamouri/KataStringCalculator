@@ -62,5 +62,13 @@ namespace KataTest
             var exception =Assert.Throws<ArgumentException>(() => StringCalculator.Add(numbers)); 
             Assert.Equal("Negatives not allowed: -1", exception.Message);
         }
+        [Fact]
+        public void IgnoreLargNumbers() 
+        {
+            var numbers = "2,1001";
+            var result = StringCalculator.Add(numbers);
+            var expected = 2;
+            Assert.Equal(expected, result);
+        }
     }
 }
