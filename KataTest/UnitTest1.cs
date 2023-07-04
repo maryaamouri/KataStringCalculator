@@ -12,5 +12,13 @@ namespace KataTest
             int result = StringCalculator.Add(numbers);
             Assert.Equal(expected, result);
         }
+        [Fact]
+        public void AddSingleNumber()
+        {
+            var numbers = "1";
+            var expected = 1;
+            int result = StringCalculator.Add(numbers);
+            Assert.Equal(expected, result);
+        }
     }
 }
