@@ -1,7 +1,5 @@
 using KataStringCalculator;
-using System;
-using System.Globalization;
-
+using Xunit;
 namespace KataTest
 {
     public class StringCalculatorTestCase
@@ -11,7 +9,7 @@ namespace KataTest
         {
             var numbers = string.Empty;
             var expected = 0;
-            int result = StringCalculator.Add(numbers);
+            var result = StringCalculator.Add(numbers);
             Assert.Equal(expected, result);
         }
         [Fact]
@@ -19,7 +17,7 @@ namespace KataTest
         {
             var numbers = "1";
             var expected = 1;
-            int result = StringCalculator.Add(numbers);
+            var result = StringCalculator.Add(numbers);
             Assert.Equal(expected, result);
         }
         [Fact]
@@ -27,15 +25,15 @@ namespace KataTest
         {
             var numbers = "2,6";
             var expected = 8;
-            int result = StringCalculator.Add(numbers);
+            var result = StringCalculator.Add(numbers);
             Assert.Equal(expected, result);
         }
         [Fact]
         public void AddUnknownAmountOfNumbers()
         {
-            string numbers = "2,3,5,7,11";
-            int expected = 28;
-            int result = StringCalculator.Add(numbers);
+            var numbers = "2,3,5,7,11";
+            var expected = 28;
+            var result = StringCalculator.Add(numbers);
             Assert.Equal(expected, result);
         }
         [Fact]
@@ -43,16 +41,16 @@ namespace KataTest
         {
             var numbers = "1\n2,3";
             var expected = 6;
-            int result = StringCalculator.Add(numbers);
+            var result = StringCalculator.Add(numbers);
             Console.WriteLine(result);
             Assert.Equal(expected, result);
         }
         [Fact]
         public void AddNumbersWithCustomDelimiter()
         {
-            string numbers = "//;\n1;2";
-            int expected = 3;
-            int result = StringCalculator.Add(numbers);
+            var numbers = "//;\n1;2";
+            var expected = 3;
+            var result = StringCalculator.Add(numbers);
             Assert.Equal(expected, result);
         }
         [Fact]

@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace KataStringCalculator
+﻿namespace KataStringCalculator
 {
     public static class StringCalculator
     {
@@ -19,10 +13,8 @@ namespace KataStringCalculator
                 delimiter = numbers[2];
                 numbers = numbers.Substring(2);
             }
-
-            string[] numberArray = numbers.Split(delimiter, '\n');
-
-            int sum = 0;
+            var numberArray = numbers.Split(delimiter, '\n');
+            var sum = 0;
             foreach (string num in numberArray)
             {
                 if (int.TryParse(num, out int parsedNum))
@@ -42,7 +34,6 @@ namespace KataStringCalculator
                 {
                     continue;
                 }
-                
             }
             if (negatives.Count > 0)
             {
@@ -50,7 +41,6 @@ namespace KataStringCalculator
                     $"Negatives not allowed: {string.Join(", ", negatives)}"
                     );
             }
-
             return sum;
         }
     }
