@@ -13,11 +13,11 @@ namespace KataStringCalculator
             if (string.IsNullOrEmpty(numbers))
                 return 0;
             var delimiter = ',';
+            var negatives = new List<int>();
             if (numbers.StartsWith("//"))
             {
                 delimiter = numbers[2];
                 numbers = numbers.Substring(2);
-
             }
 
             string[] numberArray = numbers.Split(delimiter, '\n');
@@ -27,13 +27,26 @@ namespace KataStringCalculator
             {
                 if (int.TryParse(num, out int parsedNum))
                 {
-                    sum += parsedNum;
+                    if(parsedNum < 0)
+                    {
+                        negatives.Add(parsedNum);
+                    }
+                    else
+                    {
+                        sum += parsedNum;
+                    }
                 }
                 else
                 {
                     continue;
                 }
                 
+            }
+            if (negatives.Count > 0)
+            {
+                throw new ArgumentException(
+                    $"Negatives not allowed: {string.Join(", ", negatives)}"
+                    );
             }
 
             return sum;
