@@ -46,5 +46,13 @@ namespace KataTest
             Console.WriteLine(result);
             Assert.Equal(expected, result);
         }
+        [Fact]
+        public void AddNumbersWithCustomDelimiter()
+        {
+            string numbers = "//;\n1;2";
+            int expected = 3;
+            int result = StringCalculator.Add(numbers);
+            Assert.Equal(expected, result);
+        }
     }
 }
