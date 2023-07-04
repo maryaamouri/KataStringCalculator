@@ -20,5 +20,13 @@ namespace KataTest
             int result = StringCalculator.Add(numbers);
             Assert.Equal(expected, result);
         }
+        [Fact]
+        public void AddTwoNumbers()
+        {
+            var numbers = "2,6";
+            var expected = 8;
+            int result = StringCalculator.Add(numbers);
+            Assert.Equal(expected, result);
+        }
     }
 }
