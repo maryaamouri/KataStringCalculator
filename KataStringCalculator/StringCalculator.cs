@@ -13,7 +13,7 @@ namespace KataStringCalculator
             if (string.IsNullOrEmpty(numbers))
                 return 0;
 
-            string[] numberArray = numbers.Split(',');
+            string[] numberArray = numbers.Split(',','\n');
 
             int sum = 0;
             foreach (string num in numberArray)
