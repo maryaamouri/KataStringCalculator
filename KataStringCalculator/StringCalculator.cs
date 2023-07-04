@@ -12,8 +12,15 @@ namespace KataStringCalculator
         {
             if (string.IsNullOrEmpty(numbers))
                 return 0;
+            var delimiter = ',';
+            if (numbers.StartsWith("//"))
+            {
+                delimiter = numbers[2];
+                numbers = numbers.Substring(2);
 
-            string[] numberArray = numbers.Split(',','\n');
+            }
+
+            string[] numberArray = numbers.Split(delimiter, '\n');
 
             int sum = 0;
             foreach (string num in numberArray)
