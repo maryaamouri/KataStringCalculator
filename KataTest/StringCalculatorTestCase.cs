@@ -1,4 +1,5 @@
 using KataStringCalculator;
+using System.Globalization;
 
 namespace KataTest
 {
@@ -28,11 +29,13 @@ namespace KataTest
             int result = StringCalculator.Add(numbers);
             Assert.Equal(expected, result);
         }
+        [Fact]
         public void AddNumbersWithLines()
         {
             var numbers = "1\n2,3";
             var expected = 6;
             int result = StringCalculator.Add(numbers);
+            Console.WriteLine(result);
             Assert.Equal(expected, result);
         }
     }
