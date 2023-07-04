@@ -1,4 +1,5 @@
 using KataStringCalculator;
+using System;
 using System.Globalization;
 
 namespace KataTest
@@ -53,6 +54,13 @@ namespace KataTest
             int expected = 3;
             int result = StringCalculator.Add(numbers);
             Assert.Equal(expected, result);
+        }
+        [Fact]
+        public void NegativeNumbersNotAllowd()
+        {
+            var numbers = "1,4,-1";
+            var exception =Assert.Throws<ArgumentException>(() => StringCalculator.Add(numbers)); 
+            Assert.Equal("Negatives not allowed: -1", exception.Message);
         }
     }
 }
