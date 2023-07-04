@@ -33,6 +33,8 @@ namespace KataStringCalculator
                     }
                     else
                     {
+                        if (parsedNum > 1000)
+                            continue;
                         sum += parsedNum;
                     }
                 }
