@@ -30,6 +30,14 @@ namespace KataTest
             Assert.Equal(expected, result);
         }
         [Fact]
+        public void AddUnknownAmountOfNumbers()
+        {
+            string numbers = "2,3,5,7,11";
+            int expected = 28;
+            int result = StringCalculator.Add(numbers);
+            Assert.Equal(expected, result);
+        }
+        [Fact]
         public void AddNumbersWithLines()
         {
             var numbers = "1\n2,3";
