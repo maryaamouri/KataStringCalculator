@@ -2,7 +2,7 @@ using KataStringCalculator;
 
 namespace KataTest
 {
-    public class UnitTest1
+    public class StringCalculatorTestCase
     {
         [Fact]
         public void AddEmptyString()
