@@ -1,2 +1,3 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿using KataStringCalculator;
+var result = StringCalculator.Add("3,4");
+Console.WriteLine(result);
